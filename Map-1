@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset='utf-8' />
+<title>Southen White Rhinos</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+<div id='map'></div>
+<div id='console'>
+  <h1>Southern White Rhino Population Over Time</h1>
+  <p>Data: <a href='https://ourworldindata.org/grapher/southern-white-rhinos?tab=map&fbclid=IwAR3P4vUHqefQmDI0uyHKCECrRDAgRuOQHRRGsP6OD6U3BZwunGgvbEo1g48'>Southern White Rhino Population</a> in Africa, 1895-2017</p>
+</div>
+</head>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #2dc4b2;
+}
+
+#console {
+  position: absolute;
+  width: 240px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: white;
+}
+</style>
+
+<body>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoidmlja3lqMjAiLCJhIjoiY2s2cmU2a2Z6MDU3OTNkbGExcTBhanlsNCJ9.AnDT5Fbe1lZxtUukEMhabA';
+
+var map = new mapboxgl.Map({
+  container: 'map', // container element id
+  style: 'mapbox://styles/vickyj20/ck8bz3l6y2euy1iqqhr6bn4h6',
+  center: [34.5085, 8.7832], // initial map center in [lon, lat]
+  zoom: 12
+});
+    </script>
+  </body>
+</html>

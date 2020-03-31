@@ -59,7 +59,7 @@ cursor: ew-resize;
     <div class="map-overlay-inner">
       <h1>The Rise and Fall of the Southern White Rhino Population Over Time</h1>
       <p>Data: <a href='https://ourworldindata.org/grapher/southern-white-rhinos?tab=map&fbclid=IwAR3P4vUHqefQmDI0uyHKCECrRDAgRuOQHRRGsP6OD6U3BZwunGgvbEo1g48'>Southern White Rhino Population</a> in Africa, 1895-2017</p>
-	    <h2>Year:<label id="pop_year">1895</label></h2>
+	    <h2>Year<label id="pop_year"></label></h2>
      	<input id="slider" type="range" min="1895" max="2017" step="5" value="1895" />
   </div>
   <div class="map-overlay-inner">
@@ -170,7 +170,20 @@ map.on('load', function() {
  
 document.getElementById('slider').addEventListener('input', function(e) {
 var pop_year = parseInt(e.target.value);
-map.setFilter('1895', ['==', ['rhino_pop', ['get', 'pop_year']], 'year']);
+map.setFilter('1895', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1929', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1948', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1968', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1984', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1987', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1991', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1992', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1993', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1995', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('1997', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('2005', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('2010', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
+map.setFilter('2017', ['==', ['pop_year', ['get', 'pop_year']], 'year']);
 	});
 }
 );

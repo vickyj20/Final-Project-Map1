@@ -57,7 +57,7 @@ cursor: ew-resize;
 
 <div class="map-overlay top">
     <div class="map-overlay-inner">
-      <h1>Southern White Rhino Population Over Time</h1>
+      <h1>The Rise and Fall of the Southern White Rhino Population Over Time</h1>
       <p>Data: <a href='https://ourworldindata.org/grapher/southern-white-rhinos?tab=map&fbclid=IwAR3P4vUHqefQmDI0uyHKCECrRDAgRuOQHRRGsP6OD6U3BZwunGgvbEo1g48'>Southern White Rhino Population</a> in Africa, 1895-2017</p>
      <label id="Year"></label>
      <input id="slider" type="range" min="1895" max="2017" step="5" value="0" />
@@ -105,7 +105,7 @@ document.getElementById('year').textContent = year[year];
 }
 	map.on('load', function() {
         map.addSource('1895', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.3t6v8yli'
         });
         map.addLayer({
@@ -113,7 +113,7 @@ document.getElementById('year').textContent = year[year];
         });
 	    
 	map.addSource('1929', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.3m0xntl4'
         });
         map.addLayer({
@@ -121,7 +121,7 @@ document.getElementById('year').textContent = year[year];
         });
 
         map.addSource('1948', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.4f2e1g29'
         });
         map.addLayer({
@@ -129,7 +129,7 @@ document.getElementById('year').textContent = year[year];
         });
 	    
 	map.addSource('1968', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.6z393kf6'
         });
         map.addLayer({
@@ -137,70 +137,70 @@ document.getElementById('year').textContent = year[year];
         });
 	
 	map.addSource('1984', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.46olq4yd'
         });
         map.addLayer({
             'source-layer': '1984'
         });
 	map.addSource('1987', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.atou2ixg
         });
         map.addLayer({
             'source-layer': '1987'
         });
 	map.addSource('1991', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.ctqyr4n5'
         });
         map.addLayer({
             'source-layer': '1991'
         });
 	map.addSource('1992', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.8csp8o0i'
         });
         map.addLayer({
             'source-layer': '1992'
         });
 	map.addSource('1993', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.a8495uu3'
         });
         map.addLayer({
             'source-layer': '1993'
         });
 	map.addSource('1995', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.32i840d9'
         });
         map.addLayer({
             'source-layer': '1995'
         });
 	map.addSource('1997', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.855b3s6u'
         });
         map.addLayer({
             'source-layer': '1997'
         });
 	map.addSource('2005', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.0d2dguvt'
         });
         map.addLayer({
             'source-layer': '2005'
         });
 	map.addSource('2010', {
-            type: 'vector',
+            type: 'geojson',
             url: 'vickyj20.b2t2hxmn'
         });
         map.addLayer({
             'source-layer': '2010'
         });
 	map.addSource('2017', {
-		type: 'vector',
+		type: 'geojson',
 		url: 'vickyj20.2wtm73iw'
 	});
 	map.addLayer({

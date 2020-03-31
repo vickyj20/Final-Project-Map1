@@ -59,8 +59,8 @@ cursor: ew-resize;
     <div class="map-overlay-inner">
       <h1>The Rise and Fall of the Southern White Rhino Population Over Time</h1>
       <p>Data: <a href='https://ourworldindata.org/grapher/southern-white-rhinos?tab=map&fbclid=IwAR3P4vUHqefQmDI0uyHKCECrRDAgRuOQHRRGsP6OD6U3BZwunGgvbEo1g48'>Southern White Rhino Population</a> in Africa, 1895-2017</p>
-     <label id="Year"></label>
-     <input id="slider" type="range" min="1895" max="2017" step="5" value="0" />
+	    <h2>Year:<label id="pop_year">1895</label></h2>
+     	<input id="slider" type="range" min="1895" max="2017" step="5" value="1895" />
   </div>
   <div class="map-overlay-inner">
     <div id="legend" class="legend">
@@ -75,7 +75,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoidmlja3lqMjAiLCJhIjoiY2s2cmU2a2Z6MDU3OTNkbGExc
 
 var map = new mapboxgl.Map({
   container: 'map', // container element id
-  style: 'mapbox://styles/vickyj20/ck8bz3l6y2euy1iqqhr6bn4h6',
+  style: 'mapbox://styles/vickyj20/ck8f7jpsm0uo41is3701cjy1m6',
   center: [34.0085, 8.7832], // initial map center in [lon, lat]
   zoom: 2
 });
@@ -84,25 +84,93 @@ map.on('load', function() {
 	map.addLayer({
 		id: '1895',
 		source: {
-			type: 'geojson',
-			data: './1895.geojson' // replace this with the url of your own geojson
+			type: 'vector',
+			url: 'vickyj20.dhu91dsg' // replace this with the url of your own geojson
 			    },
 	  map.addLayer({
-    		id: 'collisions',
-    		type: 'circle',
+    		id: '1929',
     		source: {
-     			 type: 'geojson',
-     			data: './collisions1601.geojson' // replace this with the url of your own geojson
+     			 type: 'vector',
+     			url: 'vickyj20.3felnp0a' // replace this with the url of your own geojson
 				},
-				});
+	 map.addLayer({
+    		id: '1948',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.1ocx6n7c' // replace this with the url of your own geojson
+				},
+	map.addLayer({
+    		id: '1968',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.35zzxrkc' // replace this with the url of your own geojson
+				},
+	map.addLayer({
+    		id: '1984',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.5enjacw0' // replace this with the url of your own geojson  
+				},
+	map.addLayer({
+    		id: '1987',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.2h0d8ns5' // replace this with the url of your own geojson  
+				},
+	map.addLayer({
+    		id: '1991',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.9paigm0t' // replace this with the url of your own geojson  
+				},
+	map.addLayer({
+    		id: '1992',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.0a0205bp' // replace this with the url of your own geojson  
+				},
+	map.addLayer({
+    		id: '1993',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.aeg0c8u1' // replace this with the url of your own geojson  
+				}, 
+	map.addLayer({
+    		id: '1995',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.8kjhrmeq' // replace this with the url of your own geojson  
+				}, 
+	map.addLayer({
+    		id: '1997',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.741whe7f' // replace this with the url of your own geojson  
+				},   
+	map.addLayer({
+    		id: '2005',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.8uad4cts' // replace this with the url of your own geojson  
+				}, 
+	map.addLayer({
+    		id: '2010',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.bcog9pnd' // replace this with the url of your own geojson  
+				},  
 		
-	filterBy(0);
+	map.addLayer({
+    		id: '2017',
+    		source: {
+     			 type: 'vector',
+     			url: 'vickyj20.cbkirtrm' // replace this with the url of your own geojson  
+				},       
+	});
  
-document
-.getElementById('slider')
-.addEventListener('input', function(e) {
-var year = parseInt(e.target.value, 10);
-filterBy(year);
+document.getElementById('slider').addEventListener('input', function(e) {
+var pop_year = parseInt(e.target.value);
+map.setFilter('1895', ['==', ['rhino_pop', ['get', 'pop_year']], 'year']);
 	});
 }
 );

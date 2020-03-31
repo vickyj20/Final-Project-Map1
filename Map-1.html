@@ -79,132 +79,21 @@ var map = new mapboxgl.Map({
   center: [34.0085, 8.7832], // initial map center in [lon, lat]
   zoom: 2
 });
-var year = [
-'1895',
-'1929',
-'1948',
-'1968',
-'1984',
-'1987',
-'1991',
-'1992',
-'1993',
-'1995',
-'1997',
-'2005',
-'2010',
-'2017'
-];
-	
-function filterBy(year) {
-var filters = ['==', 'year', year];
-map.setFilter('rhino_pop', filters)
  
-// Set the label to the month
-document.getElementById('year').textContent = year[year];
-}
-	map.on('load', function() {
-        map.addSource('1895', {
-            type: 'geojson',
-            url: 'vickyj20.3t6v8yli'
-        });
-        map.addLayer({
-            'source-layer': '1895'
-        });
-	    
-	map.addSource('1929', {
-            type: 'geojson',
-            url: 'vickyj20.3m0xntl4'
-        });
-        map.addLayer({
-            'source-layer': '1929'
-        });
-
-        map.addSource('1948', {
-            type: 'geojson',
-            url: 'vickyj20.4f2e1g29'
-        });
-        map.addLayer({
-            'source-layer': '1948'
-        });
-	    
-	map.addSource('1968', {
-            type: 'geojson',
-            url: 'vickyj20.6z393kf6'
-        });
-        map.addLayer({
-            'source-layer': '1968'
-        });
-	
-	map.addSource('1984', {
-            type: 'geojson',
-            url: 'vickyj20.46olq4yd'
-        });
-        map.addLayer({
-            'source-layer': '1984'
-        });
-	map.addSource('1987', {
-            type: 'geojson',
-            url: 'vickyj20.atou2ixg
-        });
-        map.addLayer({
-            'source-layer': '1987'
-        });
-	map.addSource('1991', {
-            type: 'geojson',
-            url: 'vickyj20.ctqyr4n5'
-        });
-        map.addLayer({
-            'source-layer': '1991'
-        });
-	map.addSource('1992', {
-            type: 'geojson',
-            url: 'vickyj20.8csp8o0i'
-        });
-        map.addLayer({
-            'source-layer': '1992'
-        });
-	map.addSource('1993', {
-            type: 'geojson',
-            url: 'vickyj20.a8495uu3'
-        });
-        map.addLayer({
-            'source-layer': '1993'
-        });
-	map.addSource('1995', {
-            type: 'geojson',
-            url: 'vickyj20.32i840d9'
-        });
-        map.addLayer({
-            'source-layer': '1995'
-        });
-	map.addSource('1997', {
-            type: 'geojson',
-            url: 'vickyj20.855b3s6u'
-        });
-        map.addLayer({
-            'source-layer': '1997'
-        });
-	map.addSource('2005', {
-            type: 'geojson',
-            url: 'vickyj20.0d2dguvt'
-        });
-        map.addLayer({
-            'source-layer': '2005'
-        });
-	map.addSource('2010', {
-            type: 'geojson',
-            url: 'vickyj20.b2t2hxmn'
-        });
-        map.addLayer({
-            'source-layer': '2010'
-        });
-	map.addSource('2017', {
-		type: 'geojson',
-		url: 'vickyj20.2wtm73iw'
-	});
+map.on('load', function() {
 	map.addLayer({
-		'source-layer': '2017'
+		id: '1895',
+		source: {
+			type: 'geojson',
+			data: './1895.geojson' // replace this with the url of your own geojson
+			    },
+	  map.addLayer({
+    		id: 'collisions',
+    		type: 'circle',
+    		source: {
+     			 type: 'geojson',
+     			data: './collisions1601.geojson' // replace this with the url of your own geojson
+				},
 				});
 		
 	filterBy(0);
